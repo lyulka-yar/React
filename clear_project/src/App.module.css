@@ -1,0 +1,22 @@
+.wrap {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 2rem;
+}
+
+.wrap div {
+    margin: .3rem;
+    padding: .3rem;
+    height: fit-content;
+    border: 1px solid;
+    border-radius: 1rem;
+    text-align: justify;
+    background-color: antiquewhite;
+}
+
+.wrap div:hover {
+    box-shadow: 0 0 5px #1d1d1d, 0 0 5px #1d1d1d;
+}
+

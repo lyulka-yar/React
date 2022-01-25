@@ -1,0 +1,17 @@
+.wrap {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border: 1px solid;
+}
+.wrap div {
+    margin: .5rem auto;
+    padding: .5rem;
+    width: 30%;
+    border: 1px solid;
+    background-color: antiquewhite;
+    border-radius: 1rem;
+}
+.wrap div:hover {
+    box-shadow: 0 0 5px #1d1d1d,  0 0 5px #1d1d1d;
+}
