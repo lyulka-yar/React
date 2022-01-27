@@ -1,12 +1,14 @@
-
+import Launches from "./components/launches/Launches";
+import css from "./App.module.css";
 
 function App() {
-  return (
-    <div>
+    return (
+        <div className={css.container}>
 
+            <Launches/>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
