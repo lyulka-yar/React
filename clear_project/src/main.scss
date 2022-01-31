@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.form-block {
+  display: grid;
+  justify-content: space-around;
+  grid-template-rows: 4fr;
+  grid-template-columns: repeat(1, auto);
+
+  & form {
+    width: 500px;
+    margin: 1rem 0;
+    padding: 2rem 1rem;
+    background-color: antiquewhite;
+    border-radius: 1rem;
+    box-shadow: 0 0 8px #1d1d1d,
+    0 0 8px #1d1d1d;
+  }
+
+  & button {
+    display: block;
+    margin-top: 2rem;
+    padding: .3rem 0;
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+  &__input input {
+    display: grid;
+    width: 100%;
+    margin: .5rem 0;
+    padding: .5rem;
+
+    & input[placeholder] {
+      padding-left: .5rem;
+      color: black;
+    }
+  }
+}
+
+.cars-block {
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: 100fr;
+  grid-template-columns: repeat(6, auto);
+  gap: 1rem;
+
+  &__buttons-block {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, auto);
+    text-align: center;
+
+    & a {
+      margin: .5rem .3rem;
+      text-decoration: none;
+      border-radius: .3rem;
+      padding: .1rem;
+      color: #fff;
+    }
+
+    & a:first-child {
+      background-color: #99e7a1;
+
+      &:hover {
+        background-color: #4af15d;
+        box-shadow: 0 0 5px #1d1d1d,
+        0 0 5px #1d1d1d;
+      }
+    }
+
+    & a:last-child {
+      background-color: #fd6348;
+
+      &:hover {
+        background-color: #f33636;
+        box-shadow: 0 0 5px #1d1d1d,
+        0 0 5px #1d1d1d;
+      }
+    }
+  }
+
+  &__card {
+    border: 1px solid;
+    border-radius: .5rem;
+    min-width: 150px;
+    padding: .5rem;
+  }
+}

@@ -1,52 +1,41 @@
 import React from 'react';
-import {carsService} from "../../services/cars.service";
+import {CarsService} from "../../services/cars.service";
 
-const Car = ({car,car: {model, price, year, id}}) => {
+const Car = ({car: {id, model, price, year}, car, toggleStatus, setCar}) => {
 
-    const styles = {
-        margin: "0 auto",
-        width: "45%",
-        card: {
-            minWidth: "150px",
-            padding: ".5rem",
-            border: "1px solid",
-            backgroundColor: "lightGrey",
-            borderRadius: ".7rem"
-        }
+    const deleteCar = async () => {
+        await CarsService.deleteById(id);
+        toggleStatus({});
     }
-
-    const deleteCar = (carId) => {
-        carsService.deleteById(carId).then(value => console.log(value))
-    }
-    const updateCar = (chosen, carId) => {
-
-        carsService.updateById(carId, car)
-            .catch(err => console.log(err));
-    }
-
 
     return (
-        <div style={styles.card}>
+        <div className={"cars-block__card"}>
             <p>id: {id}</p>
             <p>model: {model}</p>
             <p>price: {price}</p>
             <p>year: {year}</p>
-            <button
-                style={styles}
-                onClick={() => {
-                    deleteCar(id);
-                }}
+
+            <div
+                className={"cars-block__buttons-block"}
             >
-                &times;
-            </button>
-            <button
-                style={styles}
-                onClick={()=>updateCar(car,id)}
-            >
-                update
-            </button>
+                <a
+                    href={"#"}
+                    onClick={() => {
+                        setCar(car);
+                    }}
+                >
+                    &uarr;
+                </a>
+                <a
+                    href={"#"}
+                    onClick={() => deleteCar()}
+                >
+                    &times;
+                </a>
+            </div>
+
         </div>
     );
 };
 
-export default Car;
+export {Car};

@@ -1,25 +1,28 @@
-import Cars from "./components/cars/Cars";
-import Form from "./components/Form";
-import {useState} from "react";
+import React, {useState} from 'react';
 
-function App() {
+import {Cars} from "./components/cars/Cars";
+import {Form} from "./components/Form/Form";
+import "./main.css";
 
-    const [status, setStatus] = useState({});
-    console.log(status);
-    const styles = {
-        margin: "0 auto",
-        width: "90vw"
-    }
+const App = () => {
+
+    const [status, setStatus] = useState(null);
+    const [car, setCar] = useState({});
 
     return (
-        <div style={styles}>
-            <Form toggleStatus={setStatus}/>
+        <div className={"container"}>
+            <Form
+                carForWatch={car}
+                toggleStatus={setStatus}
+                setCar={setCar}
+            />
             <Cars
                 status={status}
+                toggleStatus={setStatus}
+                setCar={setCar}
             />
-
         </div>
     );
-}
+};
 
 export default App;
